@@ -1,0 +1,4 @@
+#!/bin/bash
+wallpaper_path = $(tail -n 1 /$HOME/.fehbg | cut -d "'"  --output-delimiter "'" -f 2)
+echo $wallpaper_path
+done

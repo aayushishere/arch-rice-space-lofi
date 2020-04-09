@@ -1,0 +1,88 @@
+#! /bin/bash
+# ----------------- A E S T H E T I C S -------------------
+
+# wal based script that does a bunch of stuff ($HOME/Scripts/wallpaper.sh)
+
+
+# use a premade colorscheme with wal
+wal -n --theme $HOME/Documents/arch_rice/space_lofi/space_lofi.json
+
+# source the colors. from pywal to use everywhere xresources gets used
+. "${HOME}/.cache/wal/colors.sh"
+
+FOREGROUND="$foreground"
+BACKGROUND="$background"
+BLACK="$color0"
+RED="$color1"
+GREEN="$color2"
+YELLOW="$color3"
+BLUE="$color4"
+MAGENTA="$color5"
+CYAN="$color6"
+WHITE="$color7"
+
+# things pywal should do automatically that dont work
+xwallpaper --zoom $HOME/wallpaper.png # restore wallpaper
+xrdb ~/.Xresources # reload XResources colors
+
+# notifications daemon using pywal colors
+killall dunst
+dunst \
+	-lb "$BACKGROUND" \
+	-lf "$FOREGROUND" \
+	-lfr "$GREEN" \
+	-nb "$BACKGROUND" \
+	-nf "$FOREGROUND" \
+	-nfr "$BLUE" \
+	-cb "$BACKGROUND" \
+	-cf "$FOREGROUND" \
+	-cfr "$RED" &
+
+# compositor
+killall picom
+picom --config ~/.config/picom/picom.conf --experimental-backends -b
+
+# eye saver
+# killall geoclue2
+# exec /usr/lib/geoclue-2.0/demos/agent
+killall redshift
+killall redshift-gtk
+# redshift -r -P -l geoclue2 -m randr -t 4000k:25000k &
+redshift-gtk & # applet
+
+
+# ------------------- status bar ---------------------------
+
+# polybar
+
+# killall polybar # status bar
+# polybar bar &
+
+# lemonbar
+killall lemonbar
+lemonbar &
+
+
+# ---------------- important startups ----------------------
+
+nm-applet & # network manager
+
+xfce4-power-manager # power stuff for minimal wms
+wmname compiz # fix java apps in minimal wms
+
+killall sxhkd
+sxhkd & # keyboard shortcuts
+
+# If you want to use GNOME config tools...
+
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+#
+
+# gnome keyring
+
+# eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# export SSH_AUTH_SOCK

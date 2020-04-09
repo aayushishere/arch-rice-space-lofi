@@ -1,0 +1,38 @@
+#! /bin/bash
+#
+#                 ░█▀▄░█▀▀░█▀█░█░█░█▄█
+#                 ░█▀▄░▀▀█░█▀▀░█▄█░█░█
+#                 ░▀▀░░▀▀▀░▀░░░▀░▀░▀░▀
+#
+# ---------------- autostart is run in xinit ---------------
+
+bash $HOME/Scripts/autostart
+
+# ---------------- bspc specifics --------------------------
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         1
+bspc config window_gap          12
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
+
+# window resizing
+bspc config pointer_modifier mod1
+bspc config pointer_action1 resize_side
+bspc config pointer_action1 resize_corner
+bspc config pointer_action3 move
+
+# focus follows mouse
+bspc config focus_follows_pointer true
+
+# border colors
+# Set the border colors.
+bspc config normal_border_color "$color1"
+bspc config active_border_color "$color2"
+bspc config focused_border_color "$color15"
+
+# ------------ external window rules ----------------------
+
+bspc config external_rules_command "$HOME"/.config/bspwm/external_rules

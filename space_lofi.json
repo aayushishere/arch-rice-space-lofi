@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kevin/wallpaper.png",
+    "alpha": "80",
+    "special": {
+        "background": "#1c111c",
+        "foreground": "#b0c7d4",
+        "cursor": "#b0c7d4"
+    },
+    "colors": {
+        "color0": "#1c111c",
+        "color1": "#AB2E56",
+        "color2": "#B74B6A",
+        "color3": "#AB8C70",
+        "color4": "#633C97",
+        "color5": "#6A6393",
+        "color6": "#C5608F",
+        "color7": "#b0c7d4",
+        "color8": "#7b8b94",
+        "color9": "#AB2E56",
+        "color10": "#B74B6A",
+        "color11": "#AB8C70",
+        "color12": "#633C97",
+        "color13": "#6A6393",
+        "color14": "#C5608F",
+        "color15": "#b0c7d4"
+    }
+}

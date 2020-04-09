@@ -1,0 +1,36 @@
+# Base16 Xresources/xresources-reverse
+# Author: Xresources/xresources-reverse
+
+set default-bg                  "#1c111c"
+set default-fg                  "#1c111c"
+
+set statusbar-fg                "#302530"
+set statusbar-bg                "#7b8b94"
+
+set inputbar-bg                 "#1c111c"
+set inputbar-fg                 "#b0c7d4"
+
+set notification-bg             "#1c111c"
+set notification-fg             "#b0c7d4"
+
+set notification-error-bg       "#1c111c"
+set notification-error-fg       "#AB2E56"
+
+set notification-warning-bg     "#1c111c"
+set notification-warning-fg     "#AB2E56"
+
+set highlight-color             "#AB8C70"
+set highlight-active-color      "#633C97"
+
+set completion-bg               "#1c111c"
+set completion-fg               "#633C97"
+
+set completion-highlight-fg     "#b0c7d4"
+set completion-highlight-bg     "#633C97"
+
+set recolor-lightcolor          "#1c111c"
+set recolor-darkcolor           "#b0c7d4"
+
+set recolor                     "false"
+set recolor-keephue             "false"
+

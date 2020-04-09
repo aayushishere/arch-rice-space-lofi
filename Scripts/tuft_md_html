@@ -1,0 +1,23 @@
+filename=$(echo $1 | cut -d '.' -f 1)
+
+# pandoc
+# pandoc $1 --mathjax --toc --css  "https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.4/tufte.min.css" -s -o $filename.html
+
+# cmark
+
+echo "<!DOCTYPE html>" > $filename.html
+echo "<html lang=\"en\">" >> $filename.html
+echo "<head>" >> $filename.html
+echo "<meta charset=\"UTF-8\">" >> $filename.html
+echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> $filename.html
+echo "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.4/tufte.min.css\"\>" >> $filename.html
+echo "<title>Document</title>" >> $filename.html
+echo "</head>" >> $filename.html
+echo "<body>" >> $filename.html
+
+body=$(cmark $1 -t html)
+echo "$body" >> $filename.html
+
+echo "</body>" >> $filename.html
+echo "</html>" >> $filename.html
+

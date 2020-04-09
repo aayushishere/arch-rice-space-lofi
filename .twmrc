@@ -1,0 +1,84 @@
+#
+# 9twm    --  A Plan9/9wm theme for twm by way of mofications to
+#	      .twmrc and .xinitrc.
+#
+#	      Version 1.0
+#
+# 	      By James Deagle       (james.deagle@yahoo.com)
+#
+#             This file is public domain. 
+#	
+#		"Dilige et quod vis fac." -Augustine of Hippo
+#
+#	      August 31, 2009
+#
+#	For best results, your .xinit should include the following:
+#
+#		xsetroot -solid gray -cursor_name draft_small
+#		xload -g 300x125+0+0 -fg purple -update 3 &
+#		twm
+
+
+
+NoGrabServer
+DecorateTransients
+MenuFont "-misc-fixed-bold-r-normal--15-140-75-75-c-90-iso8859-1"
+BorderWidth 3
+ButtonIndent 2
+MenuBorderWidth 1
+AutoRelativeResize
+NoRaiseOnMove
+OpaqueMove
+NoTitle
+NoMenuShadows
+
+
+Color
+{
+    BorderColor "cyan"
+    BorderTileBackground "cyan"
+    DefaultBackground "green"
+    DefaultForeground "black"
+    MenuBackground "white"
+    MenuBorderColor "green"
+    MenuForeground "black"
+    PointerForeground "black"
+    PointerBackground "white"
+
+}
+
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 1
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+Button3 = : root : f.menu "window"
+
+Button1 = m : window|icon : f.function "move-or-lower"
+Button2 = m : window|icon : f.iconify
+Button3 = m : window|icon : f.function "move-or-raise"
+
+menu "window"
+{
+"New"		f.exec "xterm -g 80x25 &"
+"Reshape"        f.resize
+"Move"           f.move
+"Delete"    	 f.delete
+"Quit"           f.quit
+}
+
+
+Cursors
+{
+                         Frame     "draft_small"
+                         Move      "tcross"
+                         Resize    "tcross"
+                         Menu      "draft_small"
+                         Button    "draft_small"
+                         Wait      "clock"
+                         Select    "dot"
+                         Destroy   "dot"
+}
