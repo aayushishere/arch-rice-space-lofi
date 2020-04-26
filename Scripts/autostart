@@ -5,7 +5,10 @@
 
 
 # use a premade colorscheme with wal
-wal -n --theme $HOME/Documents/arch_rice/space_lofi/space_lofi.json
+# wallpaper="$HOME/Pictures/wallpapers/unixporn_discord/pape-master/moody_tumblr_vibes/pot.jpg"
+wallpaper="$HOME/Pictures/wallpapers/lofi/spacerecordsnwt.png"
+
+wal -n -q -a 90 --theme $HOME/.config/wal/colorschemes/dark/space_lofi.json
 
 # source the colors. from pywal to use everywhere xresources gets used
 . "${HOME}/.cache/wal/colors.sh"
@@ -21,8 +24,23 @@ MAGENTA="$color5"
 CYAN="$color6"
 WHITE="$color7"
 
+
+# automatically create a new solid color wallpaper from the background color
+
+# convert -size 1920x1080 xc:"$background" $HOME/wallpaper.png
+
+
+#generate gtk theme with oomox
+oomox-cli -t ~/.themes --make-opts all -o pywal_theme  ~/.cache/wal/colors-oomox;
+
 # things pywal should do automatically that dont work
-xwallpaper --zoom $HOME/wallpaper.png # restore wallpaper
+
+# xwallpaper --zoom $HOME/wallpaper.png # restore wallpaper
+
+xwallpaper --zoom $HOME/Pictures/wallpapers/lofi/spacerecordsnwt.png
+
+betterlockscreen -u $HOME/Pictures/wallpapers/lofi/spacerecordsnwt.png
+
 xrdb ~/.Xresources # reload XResources colors
 
 # notifications daemon using pywal colors
@@ -40,7 +58,7 @@ dunst \
 
 # compositor
 killall picom
-picom --config ~/.config/picom/picom.conf --experimental-backends -b
+picom --config ~/.config/picom/picom.conf -b --experimental-backends --backend glx
 
 # eye saver
 # killall geoclue2
@@ -60,7 +78,12 @@ redshift-gtk & # applet
 
 # lemonbar
 killall lemonbar
-lemonbar &
+lemonbar-script &
+
+killall stalonetray
+killall nm-applet
+nm-applet &
+stalonetray -c ~/.config/.stalonetrayrc -bg "$background" &
 
 
 # ---------------- important startups ----------------------

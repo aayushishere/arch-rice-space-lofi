@@ -8,7 +8,7 @@
 
 export EDITOR=nvim
 export PAGER=less
-export BROWSER=firefox
+export BROWSER=chromium
 export MANWIDTH=80
 export HISTSIZE=-1
 export TZ=Africa/Harare

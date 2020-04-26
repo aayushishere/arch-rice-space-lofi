@@ -1,3 +1,0 @@
-killall failsafewm
-sleep 1
-./failsafewm &

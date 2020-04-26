@@ -1,0 +1,4 @@
+#!bin/bash
+
+# takes a hex color input and outputs a wallpaper.png in the home directory
+convert -size 1920x1080 xc:#$1 $HOME/wallpaper.png
