@@ -1,0 +1,24 @@
+!! XFT
+
+Xft.dpi: 					96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                false
+Xft.hintstyle:              hintslight
+
+
+! URXVT ---------------------------------------------------------------------
+!
+#include "/home/kevin/.Xresources.d/.Urxvt"
+!
+! end URXVT -----------------------------------------------------------------
+
+
+
+! colors --------------------------------------------------------------------
+
+#include "/home/kevin/.cache/wal/colors.Xresources"
+
+! end colors ----------------------------------------------------------------
+
+

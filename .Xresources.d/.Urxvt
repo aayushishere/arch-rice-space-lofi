@@ -1,0 +1,67 @@
+!! Urxvt config (thanks addy fe https://addy-dclxvi.github.io/post/configuring-urxvt/)
+
+urxvt*termName:         rxvt-unicode
+urxvt*saveline: 4096
+urxvt*loginShell: true
+
+urxvt*geometry:      80x24
+urxvt*highlightSelection: true
+
+! transparency and blur
+! fake blur for now
+! urxvt*transparent: true
+! urxvt*shading: 30
+! urxvt*blurRadius: 15
+
+! real blur for when picom is fixed
+urxvt*depth: 32
+URxvt.background: [80]#000000
+
+urxvt*borderless: 1
+urxvt*scrollBar: false
+urxvt*scrollBar_right: false
+urxvt*internalBorder: 18
+urxvt*urgentOnBell: true
+
+! fonts
+
+! Source Code Pro
+! urxvt.font:        			  xft:Source Code Pro:size=7
+! urxvt.boldFont:    			  xft:Source Code Pro:bold:size=7
+
+! Terminus
+urxvt.font:                 xft:Terminus:style=Medium:pixelsize=12
+urxvt.boldFont:             xft:Terminus:style=Medium:pixelsize=12
+urxvt.italicFont:           xft:Terminus:style=Medium:pixelsize=12
+urxvt.boldItalicFont:       xft:Terminus:style=Medium:pixelsize=12
+
+! Fira Code
+! urxvt.font:        			  xft:Fira Code:style=Regular:size=8
+! urxvt.boldFont:    			  xft:Fira Code:style=Bold:size=8
+
+! Overpass Mono
+! urxvt.font:        			  xft:Overpass Mono:style=Regular:size=9
+! urxvt.boldFont:    			  xft:Overpass Mono:style=Bold:size=9
+
+urxvt*letterSpace:   1
+urxvt*lineSpace:     0
+urxvt*cursorBlink: true
+urxvt*cursorUnderline: false
+urxvt*boldMode:      on
+urxvt*colorMode:     on
+urxvt*colorBDMode:   on
+urxvt*colorULMode:   on
+urxvt*underLine:     on
+
+!! Common Keybinds for Navigations
+urxvt.keysym.Shift-Up: command:\033]720;1\007
+urxvt.keysym.Shift-Down: command:\033]721;1\007
+urxvt.keysym.Control-Up: \033[1;5A
+urxvt.keysym.Control-Down: \033[1;5B
+urxvt.keysym.Control-Right: \033[1;5C
+urxvt.keysym.Control-Left: \033[1;5D
+
+urxvt*urlLauncher: firefox
+urxvt*underlineURLs: true
+urxvt*urlButton: 1
+
